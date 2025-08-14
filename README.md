@@ -39,20 +39,28 @@ JDBC URL: jdbc:h2:mem:testdb
 User: sa
 Password: 
 
-📜 API Endpoints
-Method	Endpoint	Description
-POST	/api/tasks	Create a new task
-GET	/api/tasks/{id}	Get task by ID
-GET	/api/tasks	List all tasks (optional filters)
-PUT	/api/tasks/{id}	Update an existing task
-DELETE	/api/tasks/{id}	Delete a task
-📌 Request Fields
-Field	Type	Required	Notes
-title	string	✅	3–100 characters
-description	string	❌	max 1000 chars
-status	enum	✅	PENDING, IN_PROGRESS, COMPLETED, CANCELLED
-priority	enum	✅	LOW, MEDIUM, HIGH, CRITICAL
-dueDate	date	✅	format YYYY-MM-DD, cannot be past date
+
+
+| Method   | Endpoint          | Description                     |
+| -------- | ----------------- | ------------------------------- |
+| `POST`   | `/api/tasks`      | Create a new task               |
+| `GET`    | `/api/tasks/{id}` | Get task by ID                  |
+| `GET`    | `/api/tasks`      | List all tasks *(with filters)* |
+| `PUT`    | `/api/tasks/{id}` | Update an existing task         |
+| `DELETE` | `/api/tasks/{id}` | Delete a task                   |
+
+
+| Field         | Type   | Required | Notes               |
+| ------------- | ------ | -------- | ------------------- |
+| `title`       | string | Yes      | 3–100 characters    |
+| `description` | string | No       | Max 1000 characters |
+| `status`      | enum   | Yes      | See allowed values  |
+| `priority`    | enum   | Yes      | See allowed values  |
+| `dueDate`     | date   | Yes      | Format `YYYY-MM-DD` |
+
+
+
+
 🧪 Sample Requests & Responses (curl)
 1️⃣ Create a Task
 curl -X POST http://localhost:8080/api/tasks \
