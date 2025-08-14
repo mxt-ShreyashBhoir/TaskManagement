@@ -40,21 +40,19 @@ User: sa
 Password: 
 
 📜 API Endpoints
-Method	Endpoint	      Description
-POST	 /api/tasks	      Create a new task
-GET	   /api/tasks/{id}	Get task by ID
-GET	   /api/tasks	      List all tasks (optional filters)
-PUT	   /api/tasks/{id}	Update an existing task
+Method	Endpoint	Description
+POST	/api/tasks	Create a new task
+GET	/api/tasks/{id}	Get task by ID
+GET	/api/tasks	List all tasks (optional filters)
+PUT	/api/tasks/{id}	Update an existing task
 DELETE	/api/tasks/{id}	Delete a task
-
- Request Fields
-Field	       Type	   Required	 Notes
-title	       string	 ✅	       3–100 characters
-description	 string	 ❌	       max 1000 chars
-status	     enum	  ✅	       PENDING, IN_PROGRESS, COMPLETED, CANCELLED
-priority	   enum	  ✅	       LOW, MEDIUM, HIGH, CRITICAL
-dueDate	     date	  ✅	       format YYYY-MM-DD, cannot be past date
-
+📌 Request Fields
+Field	Type	Required	Notes
+title	string	✅	3–100 characters
+description	string	❌	max 1000 chars
+status	enum	✅	PENDING, IN_PROGRESS, COMPLETED, CANCELLED
+priority	enum	✅	LOW, MEDIUM, HIGH, CRITICAL
+dueDate	date	✅	format YYYY-MM-DD, cannot be past date
 🧪 Sample Requests & Responses (curl)
 1️⃣ Create a Task
 curl -X POST http://localhost:8080/api/tasks \
